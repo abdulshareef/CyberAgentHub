@@ -1,0 +1,43 @@
+name: Submit an agent
+description: Suggest a free agentic AI tool for cybersecurity, digital forensics or a related field
+title: "[Submission] "
+labels: ["submission"]
+body:
+  - type: input
+    id: name
+    attributes: {label: Tool name}
+    validations: {required: true}
+  - type: input
+    id: repo
+    attributes: {label: Public repository or homepage URL}
+    validations: {required: true}
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options: [Pentest & Red Team, SOC & Threat Hunting, Digital Forensics & IR, Malware & Reverse Engineering, MCP Servers & Skills, Vulnerability Research, Securing AI Agents, Other]
+    validations: {required: true}
+  - type: textarea
+    id: summary
+    attributes: {label: What does it do? (2-3 sentences, your own words)}
+    validations: {required: true}
+  - type: input
+    id: license
+    attributes: {label: License (SPDX id, e.g. MIT, Apache-2.0, AGPL-3.0)}
+    validations: {required: true}
+  - type: textarea
+    id: notes
+    attributes: {label: Paid editions, EULA or usage restrictions}
+  - type: dropdown
+    id: relationship
+    attributes:
+      label: Your relationship to the project
+      options: [I am the author or maintainer, I have the author's permission, I am a third-party user]
+    validations: {required: true}
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmation
+      options:
+        - label: The tool is free to use and I have not included secrets or private data.
+          required: true
