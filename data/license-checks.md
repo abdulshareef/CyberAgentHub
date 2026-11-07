@@ -2,7 +2,7 @@
 
 Append-only record of license checks done after the initial listing. Entries here take precedence over `data/agents.json` until it is regenerated.
 
-Status key: `project-stated` = the project's own README/docs say so; `third-party` = only index/aggregator sites report it; `verified-on-repo` = LICENSE read on the repo page.
+Status key: `project-stated` = the project's own README/docs say so; `third-party` = only index/aggregator sites report it; `not-found` = no license located in the sources checked (does not prove there is none); `verified-on-repo` = LICENSE read on the repo page.
 
 | Date | Tool | Result | Status | Evidence / caveats |
 |---|---|---|---|---|
@@ -12,3 +12,5 @@ Status key: `project-stated` = the project's own README/docs say so; `third-part
 | 2026-11-07 | Buttercup (Trail of Bits) | AGPL-3.0 | third-party | Reported by two aggregator sites (AlternativeTo, GitTrend). Trail of Bits' announcement confirms the system was open-sourced in Aug 2025 and also released the AIxCC semifinal/final versions. DARPA states all seven finalist systems were released under OSI-approved licenses. Confirm LICENSE on repo. AGPL is strong copyleft. |
 | 2026-11-07 | Agentic Radar | Apache-2.0 | third-party | GitHub license metadata (via an index) and the PyPI package both report Apache-2.0; the README points to a LICENSE file. Some features (prompt hardening, runtime tests) need an API key, and the maker (SPLX) sells a commercial platform. |
 | 2026-11-07 | ATLANTIS (Team Atlanta) | MIT | project-stated | Repo README states MIT. Practical caveat from a 2026 paper: all seven AIxCC systems were tied to competition cloud infrastructure and are hard to run outside their original teams; the OSS-CRS framework was built to port them. |
+| 2026-11-07 | pyghidra-mcp | Apache-2.0 | third-party | Reported by a Gentoo package build file and the LobeHub MCP directory; not read on the repo. Project describes itself as beta and requires a separate Ghidra install. |
+| 2026-11-07 | Agentic Malware Analysis (mrphrazer) | not found | not-found | None of the pages found (README excerpts, aggregators) stated a license. Treat as unlicensed until the repo is checked. The recommended backend also needs a commercial Binary Ninja license; the Ghidra backend is the free option. |
