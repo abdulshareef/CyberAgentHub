@@ -2,7 +2,7 @@
 
 Append-only record of license checks done after the initial listing. Entries here take precedence over `data/agents.json` until it is regenerated.
 
-Status key: `project-stated` = the project's own README/docs say so; `third-party` = only index/aggregator sites report it; `not-found` = no license located in the sources checked (does not prove there is none); `verified-on-repo` = LICENSE read on the repo page.
+Status key: `project-stated` = the project's own README/docs say so; `third-party` = only index/aggregator sites report it; `conflicting` = sources disagree; `not-found` = no license located in the sources checked (does not prove there is none); `verified-on-repo` = LICENSE read on the repo page.
 
 | Date | Tool | Result | Status | Evidence / caveats |
 |---|---|---|---|---|
@@ -20,3 +20,5 @@ Status key: `project-stated` = the project's own README/docs say so; `third-part
 | 2026-11-07 | hackingBuddyGPT | MIT | third-party | GitHub license metadata via an index lists `mit` with a LICENSE file. README carries a warning that no crypto coin is linked to the project and that an impersonating social account is a scam. README also warns the tool executes commands on live systems (including your local shell in local mode). |
 | 2026-11-07 | PortSwigger MCP Server | GPL-3.0 | third-party | Reported by the LobeHub MCP directory; not read on the repo. Copyleft. It is a Burp Suite extension, so it needs Burp Suite installed; confirm which Burp edition supports it before listing as free to use end-to-end. |
 | 2026-11-07 | MetasploitMCP | Apache-2.0 | project-stated | README says Apache 2.0 (via an index) and GitHub metadata reports `apache-2.0` with a LICENSE file. Needs Metasploit Framework with msfrpcd running. Can generate payloads and drive post-exploitation; README carries a security warning. Dual-use. |
+| 2026-11-07 | MCP-Kali-Server | MIT (reported) | conflicting | The LobeHub directory lists MIT, but another index says the README states no license. Confirm a LICENSE file exists before listing as free to use. The server lets a connected AI run arbitrary terminal commands over an HTTP port, so never expose it beyond a trusted lab network. |
+| 2026-11-07 | mcp-security-hub (FuzzingLabs) | MIT | project-stated | README badge and GitHub metadata (via an index) both say MIT. The MIT license covers the hub's wrapper code only; each wrapped tool (Nmap, SQLMap, Hashcat and others) keeps its own license. The same company's separate FuzzForge platform (formerly SecPipe) shows a BSL 1.1 badge, which is not open source, so don't conflate the two. |
